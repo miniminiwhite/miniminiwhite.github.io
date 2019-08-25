@@ -316,19 +316,19 @@
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
           
-            <li class="tab"><a href="#comment-valine">valine</a></li>
-          
             <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+          
+            <li class="tab"><a href="#comment-valine">valine</a></li>
           
         </ul>
         <div class="tab-content">
           
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="comments"></div>
-            </div>
-          
             <div class="tab-pane gitalk" id="comment-gitalk">
               <div class="comments" id="gitalk-container"></div>
+            </div>
+          
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
             </div>
           
         </div>
@@ -535,6 +535,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'c297d40aaf1a50f8bcc4',
+      clientSecret: '72831a4dbfad3b9552bad83a2898ef6c372c1a10',
+      repo: 'miniminiwhite.github.io',
+      owner: 'miniminiwhite',
+      admin: ['miniminiwhite'],
+      id: 'a676607444a8bc8b150c9a3aff884e61',
+        language: window.navigator.language || window.navigator.userLanguage,
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
 
 <script>
 NexT.utils.getScript('//blog-1253475808.file.myqcloud.com/Valine.min.js', () => {
@@ -547,8 +566,8 @@ NexT.utils.getScript('//blog-1253475808.file.myqcloud.com/Valine.min.js', () => 
     el: '#comments',
     verify: false,
     notify: false,
-    appId: 'bvkcyzXXWf9rFSrcA1FkxJjc-MdYXbMMI',
-    appKey: 'h57a01Jhxn6smiPolpKXwY6v',
+    appId: '5S5To6BqeKCQxEskvJo9BpQg-gzGzoHsz',
+    appKey: 'lTqej0MyuomFuhifxeu5rrlq',
     placeholder: 'Say something to me :)',
     avatar: 'mm',
     meta: guest,
@@ -558,25 +577,6 @@ NexT.utils.getScript('//blog-1253475808.file.myqcloud.com/Valine.min.js', () => 
     path: location.pathname
   });
 }, window.Valine);
-</script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID: 'c297d40aaf1a50f8bcc4',
-      clientSecret: '72831a4dbfad3b9552bad83a2898ef6c372c1a10',
-      repo: 'homepage_comment',
-      owner: 'miniminiwhite',
-      admin: ['miniminiwhite'],
-      id: 'a676607444a8bc8b150c9a3aff884e61',
-        language: window.navigator.language || window.navigator.userLanguage,
-      
-      distractionFreeMode: 'true'
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
 </script>
 
 </body>
