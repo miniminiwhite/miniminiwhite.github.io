@@ -465,8 +465,9 @@
   
 
 
+
 <script>
-NexT.utils.getScript('//unpkg.com/valine@latest/dist/Valine.min.js', () => {
+NexT.utils.getScript('//blog-1253475808.file.myqcloud.com/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
   var guest = 'nick,mail';
   guest = guest.split(',').filter(item => {
@@ -474,10 +475,10 @@ NexT.utils.getScript('//unpkg.com/valine@latest/dist/Valine.min.js', () => {
   });
   new Valine({
     el: '#comments',
-    verify: true,
+    verify: false,
     notify: false,
-    appId: '5S5To6BqeKCQxEskvJo9BpQg-gzGzoHsz',
-    appKey: 'lTqej0MyuomFuhifxeu5rrlq',
+    appId: 'bvkcyzXXWf9rFSrcA1FkxJjc-MdYXbMMI',
+    appKey: 'h57a01Jhxn6smiPolpKXwY6v',
     placeholder: 'Say something to me :)',
     avatar: 'mm',
     meta: guest,
