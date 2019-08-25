@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>建站记录</title>
+      <title>施工记录</title>
       <link href="/2019/08/25/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/"/>
       <url>/2019/08/25/%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><del>第一篇文章自然是要水过去的</del></p><p>今天是2019年的8月25日,拖了好久想要搭的主页总算是做起来了。<br>搞了大半天，陆陆续续添进了一些功能。<br>踩了一些坑，也算是有一些经验可以share一下，都会记录在这里（就这么给自己挖了一个坑）。</p><p>第一篇就文章记录一些建站的事情吧。</p><p>在这里整理一下想加入的功能和已经实现了的部分：</p><ul><li>[X] 一个简单的主页。(Done. 用了github.io + Hexo的解决方案，Hexo用了NexT做主题)</li><li>[X] 评论功能。 (Done. 一开始配了半天的valine，后来用了gitalk)</li><li>[X] 代码块和</li><li>[X] 一个<del>逗比</del>有趣的标签页title转换 (Done. 就是一个简单的小JS Function)</li><li>[] 把简历补上来</li><li>[] 做个相册<br>-</li></ul>]]></content>
       
       
       <categories>
