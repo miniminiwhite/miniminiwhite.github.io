@@ -81,6 +81,16 @@
   <title>Category: 随笔 | Edwin Tang's Blog</title>
   <meta name="generator" content="Hexo 3.9.0">
   
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146428125-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-146428125-1');
+    }
+  </script>
 
 
 
@@ -463,8 +473,14 @@
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
             
           }
         })
@@ -585,31 +601,6 @@
 
   
 
-
-
-<script>
-NexT.utils.getScript('//unpkg.com/valine@latest/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail';
-  guest = guest.split(',').filter(item => {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: '5S5To6BqeKCQxEskvJo9BPQg-gzGzoHsz',
-    appKey: 'lTqej0MyuomFuhifxeu5rrlq',
-    placeholder: 'Say something to me :)',
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: false,
-    lang: 'zh-cn' || 'zh-cn',
-    path: location.pathname
-  });
-}, window.Valine);
-</script>
 
 </body>
 </html>
