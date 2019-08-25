@@ -3,7 +3,7 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        $('[rel="icon"]').attr('href', "/images/crash.ico");
+        $('[rel="icon"]').attr('href', "/images");
         document.title = '页面崩溃啦！ Σ(° △ °|||)';
         clearTimeout(titleTime);
     }
@@ -12,6 +12,6 @@ document.addEventListener('visibilitychange', function () {
         titleTime = setTimeout(function () {
             document.title = OriginTitle;
             $('[rel="icon"]').attr('href', "/images/favicon-16x16.png");
-        }, 2000);
+        }, 1500);
     }
 });
