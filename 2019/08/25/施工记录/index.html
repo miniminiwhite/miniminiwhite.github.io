@@ -61,7 +61,7 @@
 <meta property="og:site_name" content="Edwin Tang&#39;s Blog">
 <meta property="og:description" content="第一篇文章自然是要水过去的 今天是2019年的8月25日,拖了好久想要搭的主页总算是做起来了。 搞了大半天，陆陆续续添进了一些功能。 踩了一些坑，也算是有一些经验可以share一下，都会记录在这里(就这么给自己挖了一个坑)。 第一篇就文章记录一些建站的事情吧。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-29T19:50:14.121Z">
+<meta property="og:updated_time" content="2019-08-31T18:11:24.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="施工记录">
 <meta name="twitter:description" content="第一篇文章自然是要水过去的 今天是2019年的8月25日,拖了好久想要搭的主页总算是做起来了。 搞了大半天，陆陆续续添进了一些功能。 踩了一些坑，也算是有一些经验可以share一下，都会记录在这里(就这么给自己挖了一个坑)。 第一篇就文章记录一些建站的事情吧。">
@@ -296,7 +296,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-30 03:50:14" itemprop="dateModified" datetime="2019-08-30T03:50:14+08:00">2019-08-30</time>
+                <time title="Modified: 2019-09-01 02:11:24" itemprop="dateModified" datetime="2019-09-01T02:11:24+08:00">2019-09-01</time>
               </span>
             
           
@@ -353,7 +353,7 @@
 踩了一些坑，也算是有一些经验可以share一下，都会记录在这里(就这么给自己挖了一个坑)。</p>
 <p>第一篇就文章记录一些建站的事情吧。</p>
 <a id="more"></a>
-<p>想加入的功能和已经实现了的部分：</p>
+<h3 id="想加入的功能和已经实现了的部分："><a class="header-anchor" href="#想加入的功能和已经实现了的部分：">¶</a>想加入的功能和已经实现了的部分：</h3>
 <ul class="contains-task-list">
 <li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> 一个简单的主页 (用了github.io + Hexo的解决方案，Hexo用了NexT做主题)</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> 评论功能 (一开始配了半天的valine，后来用了gitalk)(然后valine的接口好了又换回valine<s>你这个反复的人</s>)
@@ -380,27 +380,35 @@
 <li>果然是路径的问题…填绝对路径就好了。</li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> 主页的博文预览…现在全部都贴出来有点蠢。
-<ul>
-<li>按照主题里面 <code>_config.yml</code>的注释，应该用<code>&lt;!-- more --&gt;</code>去控制预览篇幅。后面写post的时候注意就好。</li>
-</ul>
-</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> 主页的博文预览…现在全部都贴出来有点蠢。</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> 看到这里的你。谢谢你呀！</li>
 </ul>
 <p>挖个坑，后面还会继续补充，相关过程也会整理出来写(shui)成新的日志。</p>
-<p>施工日志:</p>
+<h3 id="备忘录"><a class="header-anchor" href="#备忘录">¶</a>备忘录</h3>
+<ol>
+<li>图片路径要用绝对路径。默认根目录为 <code>代码根目录/source/</code></li>
+<li>文章内的顶级标题为二级标题(<code>## 二级标题</code>)，写一级标题会导致渲染错误。</li>
+<li>文章会自动根据标题关系生成navigator。在文章旁边的目录可以看到。</li>
+<li>最多支持六级标题</li>
+<li>按照主题里面 <code>_config.yml</code>的注释，首页预览应该用<code>&lt;!-- more --&gt;</code>去控制篇幅。后面写post的时候注意就好。</li>
+</ol>
+<h3 id="施工日志"><a class="header-anchor" href="#施工日志">¶</a>施工日志:</h3>
+<blockquote>
 <p>2019/08/26:</p>
 <ul>
 <li>复选框的bug修掉。 渲染引擎: hexo-renderer-markdown-it</li>
 <li>评论接口换回valine</li>
 <li>title现在随机骗人了。不会离开tag就改title了。</li>
 </ul>
+</blockquote>
+<blockquote>
 <p>2019/08/25:</p>
 <ul>
 <li>套用github.io + Hexo + NexT搭起了这个站点。多谢韦阳的博文帮我拉了进坑→<a href="https://godweiyang.com/2018/04/13/hexo-blog/#toc-heading-14" target="_blank" rel="noopener">超详细Hexo+Github博客搭建小白教程</a>。</li>
 <li>添加评论功能</li>
 <li>标签页title转换</li>
 </ul>
+</blockquote>
 
     </div>
 
@@ -495,6 +503,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#想加入的功能和已经实现了的部分："><span class="nav-number">1.</span> <span class="nav-text">¶想加入的功能和已经实现了的部分：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备忘录"><span class="nav-number">2.</span> <span class="nav-text">¶备忘录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#施工日志"><span class="nav-number">3.</span> <span class="nav-text">¶施工日志:</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
