@@ -54,31 +54,44 @@
   };
 </script>
 
-  <meta name="description" content="miniminiwhite">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Edwin Tang&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="**写在前面：**本来是想用leanCloud统计用户数量的(毕竟valine也用了leanCloud做评论数据存储)，奈何按教程做了半天一直都没搞出来，一直提示400的错误(哎呀，忘了截图了)。 直观感觉应该是NexT本身的JS或者layout文件的某处出了错，但是NexT的代码对我来说有点复杂，能力有限一直读不懂…主要是嵌套和参数传递之类的关系看不懂，找不到对应的源文件。 Google再三找到">
+<meta name="keywords" content="小破站施工日志">
+<meta property="og:type" content="article">
+<meta property="og:title" content="访客数统计 &amp; google analytics 数据分析">
+<meta property="og:url" content="http://yoursite.com/2019/08/31/访客数统计-google-analytics-数据分析/index.html">
 <meta property="og:site_name" content="Edwin Tang&#39;s Blog">
-<meta property="og:description" content="miniminiwhite">
+<meta property="og:description" content="**写在前面：**本来是想用leanCloud统计用户数量的(毕竟valine也用了leanCloud做评论数据存储)，奈何按教程做了半天一直都没搞出来，一直提示400的错误(哎呀，忘了截图了)。 直观感觉应该是NexT本身的JS或者layout文件的某处出了错，但是NexT的代码对我来说有点复杂，能力有限一直读不懂…主要是嵌套和参数传递之类的关系看不懂，找不到对应的源文件。 Google再三找到">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/firebase_home.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/new_project.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/add_google_analytics.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/done.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/create_db.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/rules.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/copy_keys_and_ID.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/paste_keys_and_ID.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/create_analytic.png">
+<meta property="og:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/analytic_config.png">
+<meta property="og:updated_time" content="2019-08-31T21:20:05.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Edwin Tang&#39;s Blog">
-<meta name="twitter:description" content="miniminiwhite">
-  <link rel="canonical" href="http://yoursite.com/">
+<meta name="twitter:title" content="访客数统计 &amp; google analytics 数据分析">
+<meta name="twitter:description" content="**写在前面：**本来是想用leanCloud统计用户数量的(毕竟valine也用了leanCloud做评论数据存储)，奈何按教程做了半天一直都没搞出来，一直提示400的错误(哎呀，忘了截图了)。 直观感觉应该是NexT本身的JS或者layout文件的某处出了错，但是NexT的代码对我来说有点复杂，能力有限一直读不懂…主要是嵌套和参数传递之类的关系看不懂，找不到对应的源文件。 Google再三找到">
+<meta name="twitter:image" content="http://yoursite.com/imgs/homepage_construction/visitor_count/firebase_home.png">
+  <link rel="canonical" href="http://yoursite.com/2019/08/31/访客数统计-google-analytics-数据分析/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Edwin Tang's Blog</title>
+  <title>访客数统计 & google analytics 数据分析 | Edwin Tang's Blog</title>
   <meta name="generator" content="Hexo 3.9.0">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146428125-1"></script>
@@ -249,12 +262,13 @@
 
           <div id="content" class="content">
             
+
   <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/访客数统计-google-analytics-数据分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -267,9 +281,8 @@
       <meta itemprop="name" content="Edwin Tang's Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/31/访客数统计-google-analytics-数据分析/" class="post-title-link" itemprop="url">访客数统计 & google analytics 数据分析</a>
+        <h1 class="post-title" itemprop="name headline">访客数统计 & google analytics 数据分析
+
           
         </h1>
 
@@ -323,6 +336,18 @@
             </span>
           
   
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/08/31/访客数统计-google-analytics-数据分析/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/08/31/访客数统计-google-analytics-数据分析/" itemprop="commentCount"></span></a>
+  </span>
+  
   
 
         </div>
@@ -334,22 +359,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>**写在前面：**本来是想用leanCloud统计用户数量的(毕竟valine也用了leanCloud做评论数据存储)，奈何按教程做了半天一直都没搞出来，一直提示400的错误(哎呀，忘了截图了)。<br>
+        <p>**写在前面：**本来是想用leanCloud统计用户数量的(毕竟valine也用了leanCloud做评论数据存储)，奈何按教程做了半天一直都没搞出来，一直提示400的错误(哎呀，忘了截图了)。<br>
 直观感觉应该是NexT本身的JS或者layout文件的某处出了错，但是NexT的代码对我来说有点复杂，能力有限一直读不懂…主要是嵌套和参数传递之类的关系看不懂，找不到对应的源文件。<br>
 Google再三找到了<a href="https://qiuyiwu.github.io" target="_blank" rel="noopener">@Qiuyi</a>关于阅读量统计的Blog<a href="https://qiuyiwu.github.io/2019/01/26/Hexo-View/" target="_blank" rel="noopener">传送门在这里</a>，打开了新世界…然后就换成用Firebase统计阅读量了。</p>
 <p>对比两个统计工具，应该是leanCloud的比较安全，毕竟有插件和机制保护阅读量数据不被随意删改，Firebase这里好像是可以随意读写的。欢迎讨论。</p>
 <p>本文主要写的是如何在NexT主题下加入基于Firebase的阅读量统计功能。另外因为Firebase是Google提供的服务，顺便把 Google analytics一并加上。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/31/访客数统计-google-analytics-数据分析/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
+<a id="more"></a>
+<hr>
+<p>正文在下面，我是分割线 &quot;ヽ(´▽｀)ノ&quot;♪</p>
+<hr>
+<h2 id="基于firebase的阅读量统计"><a class="header-anchor" href="#基于firebase的阅读量统计">¶</a>基于Firebase的阅读量统计</h2>
+<p>为啥要用Firebase做阅读量统计前面已经说过了。直接开始教程吧。</p>
+<h3 id="进入firebase主页-登录"><a class="header-anchor" href="#进入firebase主页-登录">¶</a>进入firebase主页，登录</h3>
+<p><a href="https://console.firebase.google.com" target="_blank" rel="noopener">传送门在这里</a>。因为要用的是google的服务，肯定要先有个google账户，怎么注册就不说了吧…load完之后点<strong>创建项目</strong>。<br>
+<img src="/imgs/homepage_construction/visitor_count/firebase_home.png" alt="Firebase homepage"></p>
+<h3 id="建立一个用来做阅读量统计的项目"><a class="header-anchor" href="#建立一个用来做阅读量统计的项目">¶</a>建立一个用来做阅读量统计的项目</h3>
+<p>名字随便起应该没关系~在这里我选的叫<code>homepage_visitor_count</code>。<br>
+<img src="/imgs/homepage_construction/visitor_count/new_project.png" alt="New project"></p>
+<p>后面会问你要不要设置Google Analytics分析。这个设置是可选的，当然也可以在建立项目之后再改动。我这里选了不设置，原因后面会解释。完了就可以创建一个项目了。<br>
+<img src="/imgs/homepage_construction/visitor_count/add_google_analytics.png" alt="Google analytics?"></p>
+<p>后面的配置需要load一小会儿，耐心等一等就行。<br>
+<img src="/imgs/homepage_construction/visitor_count/done.png" alt="Finish!"></p>
+<h3 id="建立数据库-设置读写规则"><a class="header-anchor" href="#建立数据库-设置读写规则">¶</a>建立数据库 &amp; 设置读写规则</h3>
+<p>完成之后进去，选左边<code>开发</code>标签里的<code>database</code>，然后在右边的页面里面选创建数据库<br>
+<img src="/imgs/homepage_construction/visitor_count/create_db.png" alt="Create database"></p>
+<p>然后就会问你要用什么规则(这里忘了截图…尴尬)。选哪个都可以，因为其实后面是会修改的。之后就点进来改规则吧。<br>
+<img src="/imgs/homepage_construction/visitor_count/rules.png" alt="Modify rules"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rules_version = &apos;2&apos;;</span><br><span class="line">service cloud.firestore &#123;</span><br><span class="line">  match /databases/&#123;database&#125;/documents &#123;</span><br><span class="line">    match /articles/&#123;any&#125; &#123;</span><br><span class="line">      allow read: if true;</span><br><span class="line">      allow write: if true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意上面代码的第三行<code>match /articles/{any}</code>里面的<code>articles</code>其实可以是任何变量名，后一步会继续说明，在这里先说起一下。<br>
+做完这一步，Firebase上的设置就做完了。下一步会是对NexT本地项目的配置(就真的很简单</p>
+<h3 id="copy-firebase项目信息填入next本地配置文件"><a class="header-anchor" href="#copy-firebase项目信息填入next本地配置文件">¶</a>Copy Firebase项目信息填入NexT本地配置文件</h3>
+<p>按照下图的步骤，点开项目设置，把项目ID和网络API密钥copy下来，分别粘贴到NexT主题配置文件(<strong>不是Hexo的配置文件，是NexT的配置文件</strong>)里面关于firestore的配置里。<br>
+<img src="/imgs/homepage_construction/visitor_count/copy_keys_and_ID.png" alt="Copy configs"></p>
+<p>项目ID对应projectId，网络API密钥对应apiKey。当然啦enable要改成true。<br>
+<img src="/imgs/homepage_construction/visitor_count/paste_keys_and_ID.png" alt="Paste configs"></p>
+<p>还记得上一步提到的任意变量<code>articles</code>吗？其实对应的就是上图配置文件里面collection的值。总之两个设置能对应上就好了。</p>
+<p>如无意外，<code>hexo g -d</code>部署完博客页面，刷新一下应该就能看到阅读量统计了。Easy peasy!</p>
+<h3 id="再碎碎念两句"><a class="header-anchor" href="#再碎碎念两句">¶</a>再碎碎念两句</h3>
+<p>如果想要修改阅读量(比如初始化回零)，直接在Firebase的database标签里面找回对应文章的阅读量修改就行了。</p>
+<hr>
+<p>第二条华丽丽的分割线</p>
+<hr>
+<h2 id="google-analytics"><a class="header-anchor" href="#google-analytics">¶</a>Google Analytics</h2>
+<p>为啥要加个Google Analytics? 只是因为顺手…后面可以通过访问量统计看看究竟是什么内容比较受欢迎?(依然在探索要怎么用)。<br>
+如果你是从文章一开始读下来的话，你会发现上面新建阅读量项目的时候，是可以关联一个Google Analytics服务的。但是前面并没有建议关联。为什么呢？因为Somehow这里的Google Analytics并不能给我们提供一个NexT配置文件需要的tracking ID…Firebase貌似一开始就提供了一个<code>应用和网站</code>版本的数据分析服务，而主页需要的只是web应用的数据分析(也就是网站分析的业务)</p>
+<p>Anyways. 要Google的数据分析业务，先进入Google Analytics，找到创建媒体资源的入口，选<code>网站</code><br>
+<img src="/imgs/homepage_construction/visitor_count/create_analytic.png" alt="Create analytic service"></p>
+<p>默认网址里面填上主页根目录地址(比如我的小破站就是<a href="miniminiwhite.github.io">miniminiwhite.github.io</a>)，其他设置随意<br>
+<img src="/imgs/homepage_construction/visitor_count/analytic_config.png" alt="Create analytic service"></p>
+<p>之后把trackingID(追踪ID) copy下来贴到NexT主题配置文件(<strong>不是Hexo的配置文件，是NexT的配置文件</strong>)里面google_analytics的对应栏目就可以了。<br>
+如果想免去本地调试对数据分析的干扰，可以将下一项<code>localhost_ignored</code>的值设置为true忽略本地访问。</p>
+<p>搞掂！</p>
+
     </div>
 
     
@@ -357,380 +418,70 @@ Google再三找到了<a href="https://qiuyiwu.github.io" target="_blank" rel="no
     
       
 
-      <footer class="post-footer">
-          <div class="post-eof"></div>
         
-      </footer>
-  </div>
-  
-  
-  
-  </article>
+      
+        
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/Emoji-cheat-sheet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Edwin Tang">
-      <meta itemprop="description" content="miniminiwhite">
-      <meta itemprop="image" content="/images/edwin_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Edwin Tang's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/29/Emoji-cheat-sheet/" class="post-title-link" itemprop="url">Emoji cheat sheet</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-29 15:52:40" itemprop="dateCreated datePublished" datetime="2019-08-29T15:52:40+08:00">2019-08-29</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-01 02:46:30" itemprop="dateModified" datetime="2019-09-01T02:46:30+08:00">2019-09-01</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span class="post-meta-item" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Edwin Tang</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://yoursite.com/2019/08/31/访客数统计-google-analytics-数据分析/" title="访客数统计 & google analytics 数据分析">http://yoursite.com/2019/08/31/访客数统计-google-analytics-数据分析/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+</div>
 
       
-          <p>原文转自<a href="https://github.com/ikatyang/" target="_blank" rel="noopener">ikatyang</a>的github库<a href="https://github.com/ikatyang/emoji-cheat-sheet" target="_blank" rel="noopener">emoji-cheat-sheet</a></p>
-          <!--noindex-->
+
+      <footer class="post-footer">
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/29/Emoji-cheat-sheet/#more" rel="contents">
-                Read more &raquo;
-              </a>
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/小破站施工日志/" rel="tag"><i class="fa fa-tag"></i> 小破站施工日志</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/29/Emoji-cheat-sheet/" rel="next" title="Emoji cheat sheet">
+                  <i class="fa fa-chevron-left"></i> Emoji cheat sheet
+                </a>
+              
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      
+            <span class="post-nav-divider"></span>
 
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/28/广州→克利夫兰/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Edwin Tang">
-      <meta itemprop="description" content="miniminiwhite">
-      <meta itemprop="image" content="/images/edwin_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Edwin Tang's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/28/广州→克利夫兰/" class="post-title-link" itemprop="url">广州→克利夫兰</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
+            <div class="post-nav-prev post-nav-item">
               
-                
-              
-
-              <time title="Created: 2019-08-28 17:08:18" itemprop="dateCreated datePublished" datetime="2019-08-28T17:08:18+08:00">2019-08-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-30 03:48:12" itemprop="dateModified" datetime="2019-08-30T03:48:12+08:00">2019-08-30</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/访学二三事/" itemprop="url" rel="index"><span itemprop="name">访学二三事</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span class="post-meta-item" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>研二的时候申请了在研三的第一个学期去凯斯西储大学（Case Western Reserve University）访问一个学期。<br>
-在这里真的十分感谢华师大爸爸的慷慨资助（虽然自己也要出不少…），也很感谢CWRU的教授肯收留我。</p>
-<p>申请和出发中间经历了各种各样奇奇怪怪的事情，比如学校资助的面试日期刚好跟ICSE开会的日期碰上，申请美签被check各样…总之算是好事多磨吧。</p>
-<p>Anyways 总算出发啦。现在怀着鸡冻的心情在仁川机场写着这篇流水账 😆</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/28/广州→克利夫兰/#more" rel="contents">
-                Read more &raquo;
-              </a>
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-      <footer class="post-footer">
-          <div class="post-eof"></div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/施工记录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Edwin Tang">
-      <meta itemprop="description" content="miniminiwhite">
-      <meta itemprop="image" content="/images/edwin_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Edwin Tang's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/25/施工记录/" class="post-title-link" itemprop="url">施工记录</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-25 23:24:30" itemprop="dateCreated datePublished" datetime="2019-08-25T23:24:30+08:00">2019-08-25</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-01 03:51:37" itemprop="dateModified" datetime="2019-09-01T03:51:37+08:00">2019-09-01</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span class="post-meta-item" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><s>第一篇文章自然是要水过去的</s></p>
-<p>今天是2019年的8月25日,拖了好久想要搭的主页总算是做起来了。<br>
-搞了大半天，陆陆续续添进了一些功能。<br>
-踩了一些坑，也算是有一些经验可以share一下，都会记录在这里(就这么给自己挖了一个坑)。</p>
-<p>第一篇就文章记录一些建站的事情吧。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/25/施工记录/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-    
-  </div>
-
-  
 
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -745,6 +496,11 @@ Google再三找到了<a href="https://qiuyiwu.github.io" target="_blank" rel="no
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc" data-target="post-toc-wrap">
@@ -757,6 +513,8 @@ Google再三找到了<a href="https://qiuyiwu.github.io" target="_blank" rel="no
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于firebase的阅读量统计"><span class="nav-number">1.</span> <span class="nav-text">¶基于Firebase的阅读量统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入firebase主页-登录"><span class="nav-number">1.1.</span> <span class="nav-text">¶进入firebase主页，登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一个用来做阅读量统计的项目"><span class="nav-number">1.2.</span> <span class="nav-text">¶建立一个用来做阅读量统计的项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立数据库-设置读写规则"><span class="nav-number">1.3.</span> <span class="nav-text">¶建立数据库 &amp; 设置读写规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#copy-firebase项目信息填入next本地配置文件"><span class="nav-number">1.4.</span> <span class="nav-text">¶Copy Firebase项目信息填入NexT本地配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再碎碎念两句"><span class="nav-number">1.5.</span> <span class="nav-text">¶再碎碎念两句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#google-analytics"><span class="nav-number">2.</span> <span class="nav-text">¶Google Analytics</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
@@ -1023,18 +781,6 @@ Google再三找到了<a href="https://qiuyiwu.github.io" target="_blank" rel="no
 
   
 
-  
-    
-      
-        
-      
-    
-      
-    
-      
-    
-      
-    
   
     
       
