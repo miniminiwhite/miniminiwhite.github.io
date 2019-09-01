@@ -14,26 +14,26 @@ document.addEventListener('visibilitychange', function () {
                 $('[rel="icon"]').attr('href', "/images");
                 document.title = '页面崩溃啦！ Σ(° △ °|||)';
                 clearTimeout(titleTime);
+                switched = true;
             }, 3000);
-            switched = true;
         }
-    }
-    else if (switched) {
+    } else if (switched) {
         document.title = '突然又好了~ (*/ω\\*)';
         titleTime = setTimeout(function () {
             document.title = OriginTitle;
             $('[rel="icon"]').attr('href', "/images/favicon-16x16.png");
+            switched = false;
         }, 1000);
-        switched = false;
     }
 });
 
 // 建站时间统计
 var currentTime = new Date();
+
 function establishedSince() {
-    var initialTime = new Date("08/25/2019 12:00:00");
+    var initialTime = new Date("August 25, 2019 12:00:00 GMT+08:00");
     var sections = {}
-    currentTime.setTime(currentTime.getTime() + 250);
+    currentTime.setTime(currentTime.getTime() + 500);
     sections['days'] = String(Math.floor((currentTime - initialTime) / 1000 / 60 / 60 / 24));
     sections['hours'] = String(Math.floor((currentTime - initialTime) / 1000 / 60 / 60 - 24 * sections['days']));
     sections['mins'] = String(Math.floor((currentTime - initialTime) / 1000 / 60 - 60 * sections['hours'] - 60 * 24 * sections['days']));
@@ -49,4 +49,4 @@ function establishedSince() {
 
 }
 
-setInterval(establishedSince, 300);
+setInterval(establishedSince, 500);
